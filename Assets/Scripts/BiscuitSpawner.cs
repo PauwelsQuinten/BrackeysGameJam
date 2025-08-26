@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BiscuitSpawner : MonoBehaviour
@@ -20,7 +22,7 @@ public class BiscuitSpawner : MonoBehaviour
         GameObject biscuitPrefab = SelectRandomBiscuit();
 
         Vector3 spawnPos = transform.position;
-        spawnPos.y = _towerHeight + 10;
+        spawnPos.y = _towerHeight + 9;
 
         GameObject spawnedBiscuit = Instantiate(biscuitPrefab, spawnPos, transform.rotation);
         spawnedBiscuit.transform.parent = this.transform;
@@ -29,20 +31,49 @@ public class BiscuitSpawner : MonoBehaviour
 
     private GameObject SelectRandomBiscuit()
     {
+        int isBurned = 0;
         int biscuitType = 0;
         int biscuitIndex = 0;
-        biscuitType = Random.Range(1, 3);
+        isBurned = UnityEngine.Random.Range(1, 4);
+
+        if (isBurned == 2) biscuitType = 2;
+        else biscuitType = 1;
 
         switch (biscuitType) 
         { 
             case 1:
-                biscuitIndex = Random.Range(0, _biscuitPrefabs.Count);
+                biscuitIndex = UnityEngine.Random.Range(0, _biscuitPrefabs.Count);
                 return _biscuitPrefabs[biscuitIndex];
             case 2:
-                biscuitIndex = Random.Range(0, _burntBiscuitPrefabs.Count);
+                biscuitIndex = UnityEngine.Random.Range(0, _burntBiscuitPrefabs.Count);
                 return _burntBiscuitPrefabs[biscuitIndex];
         }
 
         return null;
+    }
+
+    private void MakeBurntBiscuits(Vector2 originPos)
+    {
+        List<Collider2D> biscuits = Physics2D.OverlapCircleAll(originPos, 1).ToList();
+
+        foreach(Collider2D collider in biscuits)
+        {
+            BiscuitBehaviour biscuit = collider.gameObject.GetComponent<BiscuitBehaviour>();
+            if(biscuit == null) continue;
+            biscuit.Burn();
+        }
+    }
+
+    public void TowerCollisionDetected(Component sender, object obj)
+    {
+        BiscuitBehaviour biscuit = sender.gameObject.GetComponent<BiscuitBehaviour>();
+        Vector3 newPiecePos = sender.transform.position;
+        if(_towerHeight < newPiecePos.y)
+        {
+            _towerHeight = newPiecePos.y;
+        }
+        if(biscuit.IsBurned) MakeBurntBiscuits(sender.gameObject.transform.position);
+        biscuit.enabled = false;
+        SpawnRandomBiscuit();
     }
 }
