@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HeightMeterUI : MonoBehaviour
@@ -11,7 +12,7 @@ public class HeightMeterUI : MonoBehaviour
     public void HeightChanged(Component sender, object obj)
     {
         float height = (float)(obj as float?);
-        if(_previousHeight == 0) _previousHeight = height;
+        if(height < _previousHeight) _previousHeight = height;
         if (_previousHeight == height) return;
         _previousHeight = height;
         _height++;

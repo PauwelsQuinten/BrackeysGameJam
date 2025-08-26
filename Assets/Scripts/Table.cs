@@ -6,7 +6,6 @@ public class Table : MonoBehaviour
     [SerializeField]
     private GameEvent _takePenalty;
 
-    [SerializeField]
     private BiscuitSpawner _spawner;
     private void OnCollisionEnter2D(Collision2D collision)
     {
