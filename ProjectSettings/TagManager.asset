@@ -8,6 +8,7 @@ TagManager:
   - Red
   - Green
   - Blue
+  - Biscuit
   layers:
   - Default
   - TransparentFX
