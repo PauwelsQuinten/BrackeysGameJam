@@ -12,6 +12,8 @@ public class BiscuitBehaviour : MonoBehaviour
     [SerializeField]
     private GameEvent _lowerThanTower;
     [SerializeField]
+    private GameEvent _biscuitDestroyed;
+    [SerializeField]
     private Sprite _burntTexture;
     [SerializeField]
     private SpriteRenderer _texture;
@@ -83,7 +85,8 @@ public class BiscuitBehaviour : MonoBehaviour
 
     private IEnumerator DestroyWithDelay()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
+        _biscuitDestroyed.Raise(this, EventArgs.Empty);
         Destroy(this.gameObject);
     }
 }

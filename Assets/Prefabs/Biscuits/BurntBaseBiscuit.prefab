@@ -124,10 +124,12 @@ MonoBehaviour:
   _fallSpeed: 1
   _collidedWithTower: {fileID: 11400000, guid: 4dd2d72c9c1d12245b1d58075d160aa1, type: 2}
   _lowerThanTower: {fileID: 11400000, guid: f440c6e87c88ae5428e4a6c2fc0fafd0, type: 2}
+  _biscuitDestroyed: {fileID: 11400000, guid: e153d450d2dcf4d4d98de654b540f248, type: 2}
   _burntTexture: {fileID: 21300000, guid: f394ea68161d02e46a92f0bfa31835c4, type: 3}
   _texture: {fileID: 7132513966337402717}
   IsBurned: 1
   CurrentTowerHight: 0
+  HasTouchedPlate: 0
 --- !u!114 &6752370952173595175
 MonoBehaviour:
   m_ObjectHideFlags: 0

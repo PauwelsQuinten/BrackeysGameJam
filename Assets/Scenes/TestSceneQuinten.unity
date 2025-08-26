@@ -426,6 +426,17 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &2117669445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1598014733392896753, guid: 1d0c64cac8daf7d409d1e1b183e62f66, type: 3}
+  m_PrefabInstance: {fileID: 4441312440064011245}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4441312440064011245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -645,6 +656,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 164170877365342875, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
+      propertyPath: _heightText
+      value: 
+      objectReference: {fileID: 2117669445}
     - target: {fileID: 991606861228921974, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
       propertyPath: m_Name
       value: HUDui
