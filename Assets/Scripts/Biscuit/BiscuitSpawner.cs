@@ -19,7 +19,7 @@ public class BiscuitSpawner : MonoBehaviour
         SpawnRandomBiscuit();
     }
 
-    private void SpawnRandomBiscuit()
+    public void SpawnRandomBiscuit()
     {
         _towerGrew.Raise(this, _towerHeight);
         GameObject biscuitPrefab = SelectRandomBiscuit();
