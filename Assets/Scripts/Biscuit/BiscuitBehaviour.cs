@@ -22,6 +22,7 @@ public class BiscuitBehaviour : MonoBehaviour
 
     public bool IsBurned;
     public float CurrentTowerHight;
+    public bool HasTouchedPlate;
     void Start()
     {
         StartCoroutine(MoveDown());
@@ -35,6 +36,7 @@ public class BiscuitBehaviour : MonoBehaviour
         GetComponent<Rigidbody2D>().gravityScale = 1;
         Destroy(GetComponent<PlayerInput>());
         _collidedWithTower.Raise(this, collision.gameObject);
+        HasTouchedPlate = true;
     }
 
     public void MoveX(InputAction.CallbackContext ctx)

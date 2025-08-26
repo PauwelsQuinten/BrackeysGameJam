@@ -9,6 +9,8 @@ public class GameStateManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-
-
+    public void GameLost(Component sender, object obj)
+    {
+        SceneManager.LoadScene(2);
+    }
 }
