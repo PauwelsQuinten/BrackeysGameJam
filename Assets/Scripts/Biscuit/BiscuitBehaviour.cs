@@ -10,6 +10,8 @@ public class BiscuitBehaviour : MonoBehaviour
     [SerializeField]
     private GameEvent _collidedWithTower;
     [SerializeField]
+    private GameEvent _lowerThanTower;
+    [SerializeField]
     private Sprite _burntTexture;
     [SerializeField]
     private SpriteRenderer _texture;
@@ -19,6 +21,7 @@ public class BiscuitBehaviour : MonoBehaviour
     private Vector2 _movement;
 
     public bool IsBurned;
+    public float CurrentTowerHight;
     void Start()
     {
         StartCoroutine(MoveDown());
@@ -31,7 +34,7 @@ public class BiscuitBehaviour : MonoBehaviour
         _hasCollided = true;
         GetComponent<Rigidbody2D>().gravityScale = 1;
         Destroy(GetComponent<PlayerInput>());
-        _collidedWithTower.Raise(this, EventArgs.Empty);
+        _collidedWithTower.Raise(this, collision.gameObject);
     }
 
     public void MoveX(InputAction.CallbackContext ctx)
@@ -62,6 +65,7 @@ public class BiscuitBehaviour : MonoBehaviour
         while (!_hasCollided)
         {
             transform.position -= transform.up * _fallSpeed * Time.deltaTime;
+            if (CurrentTowerHight > transform.position.y) _lowerThanTower.Raise(this, transform.position.y);
             yield return null;
         }
     }
