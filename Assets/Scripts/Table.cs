@@ -15,5 +15,6 @@ public class Table : MonoBehaviour
         _takePenalty.Raise(this, EventArgs.Empty);
         Destroy(collision.gameObject);
         if(!biscuit.HasTouchedPlate) _spawner.SpawnRandomBiscuit();
+        else _spawner.RemoveBiscuit(biscuit);
     }
 }

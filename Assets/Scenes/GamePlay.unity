@@ -221,6 +221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BiscuitSpawer
       objectReference: {fileID: 0}
+    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
+      propertyPath: _takePenalty
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b896b3f500e4a242b4a9f5b2586c26a, type: 2}
     - target: {fileID: 8518837906916983021, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

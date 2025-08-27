@@ -12,17 +12,16 @@ public class HeightMeterUI : MonoBehaviour
     public void HeightChanged(Component sender, object obj)
     {
         float height = (float)(obj as float?);
-        if(height < _previousHeight) _previousHeight = height;
-        if (_previousHeight == height) return;
+        if(_previousHeight - height > 0.3f) _height--;
+        else if (height - _previousHeight > 0.3f) _height++;
         _previousHeight = height;
-        _height++;
 
         _heightText.text = $"Height: {_height}";
     }
 
     public void BiscuitDestroyed(Component sender, object obj)
     {
-        _height--;
-        _heightText.text = $"Height: {_height}";
+        //_height--;
+        //_heightText.text = $"Height: {_height}";
     }
 }

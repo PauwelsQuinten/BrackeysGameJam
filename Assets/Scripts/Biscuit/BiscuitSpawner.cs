@@ -11,6 +11,8 @@ public class BiscuitSpawner : MonoBehaviour
     private List<GameObject> _burntBiscuitPrefabs = new List<GameObject>();
     [SerializeField]
     private GameEvent _towerGrew;
+    [SerializeField]
+    private GameEvent _takePenalty;
 
     private float _towerHeight = 0;
     private List<GameObject> _biscuits = new List<GameObject>();
@@ -66,12 +68,13 @@ public class BiscuitSpawner : MonoBehaviour
             BiscuitBehaviour biscuit = collider.gameObject.GetComponent<BiscuitBehaviour>();
             if(biscuit == null) continue;
             biscuit.Burn();
-            _biscuits.Remove(collider.gameObject);
+            if(_biscuits.Count > 0)
+            {
+                if (_biscuits[0].GetComponent<BiscuitBehaviour>().IsBurned) _takePenalty.Raise(this, EventArgs.Empty);
+            }
+            RemoveBiscuit(biscuit);
         }
 
-        if(_biscuits.Count - 1 >= 0)_towerHeight = _biscuits[_biscuits.Count - 1].transform.position.y;
-        else _towerHeight = 0;
-        _towerGrew.Raise(this, _towerHeight);
     }
 
     public void TowerCollisionDetected(Component sender, object obj)
@@ -79,7 +82,7 @@ public class BiscuitSpawner : MonoBehaviour
         GameObject collisionObj = obj as GameObject;
         BiscuitBehaviour biscuit = sender.gameObject.GetComponent<BiscuitBehaviour>();
         Vector3 newPiecePos = sender.transform.position;
-        if(_towerHeight < newPiecePos.y)
+        if(_towerHeight <= newPiecePos.y)
         {
             _towerHeight = newPiecePos.y;
             _biscuits.Add(biscuit.gameObject);
@@ -87,15 +90,27 @@ public class BiscuitSpawner : MonoBehaviour
         }
         if (biscuit.IsBurned && collisionObj.GetComponent<BiscuitBehaviour>() != null)
             MakeBurntBiscuits(sender.gameObject.transform.position);
-        else if (biscuit.IsBurned) 
+        else if (biscuit.IsBurned)
         {
             biscuit.Burn();
-            _biscuits.Remove(biscuit.gameObject);
-            if (_biscuits.Count - 1 >= 0) _towerHeight = _biscuits[_biscuits.Count - 1].transform.position.y;
-            else _towerHeight = 0;
-            _towerGrew.Raise(this, _towerHeight);
+
+            if (_biscuits.Count > 0)
+            {
+                if (_biscuits[0].GetComponent<BiscuitBehaviour>().IsBurned) _takePenalty.Raise(this, EventArgs.Empty);
+            }
+
+            RemoveBiscuit(biscuit);
         }
+
         biscuit.enabled = false;
         SpawnRandomBiscuit();
+    }
+
+    public void RemoveBiscuit(BiscuitBehaviour biscuit)
+    {
+        _biscuits.Remove(biscuit.gameObject);
+        if (_biscuits.Count - 1 >= 0) _towerHeight = _biscuits[_biscuits.Count - 1].transform.position.y;
+        else _towerHeight = 0;
+        _towerGrew.Raise(this, _towerHeight);
     }
 }
