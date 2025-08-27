@@ -19,6 +19,6 @@ public class ButtonLogic : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetSceneAt(1).name, LoadSceneMode.Single);
+        SceneManager.LoadScene(1);
     }
 }

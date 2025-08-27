@@ -598,8 +598,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6066a59acdd17f34da829f918387f9d4, type: 2}
   Responses:
   - m_PersistentCalls:
-      m_Calls: []
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 632397744}
         m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
