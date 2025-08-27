@@ -18,17 +18,13 @@ public class GarbageBin : MonoBehaviour
 
         if (bis == null) return;
 
-        if (bis.IsBurned)
-        {
-            Destroy(biscuit);
-            _spawner.SpawnRandomBiscuit();
-        }
-        else if (!bis.IsBurned)
-        {
+        if (!bis.IsBurned)
             AddStrike.Raise(this);
-            Destroy(biscuit);
-            _spawner.SpawnRandomBiscuit();
-        }
+
+        Destroy(biscuit);
+        if (bis.HasTouchedPlate) return;
+        _spawner.SpawnRandomBiscuit();
+
 
     }
 }
