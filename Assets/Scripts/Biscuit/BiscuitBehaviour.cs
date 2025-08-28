@@ -17,6 +17,8 @@ public class BiscuitBehaviour : MonoBehaviour
     private Sprite _burntTexture;
     [SerializeField]
     private SpriteRenderer _texture;
+    [SerializeField]
+    private AudioClip _stackSound;
 
     private bool _hasCollided;
     private bool _isMoving;
@@ -25,9 +27,23 @@ public class BiscuitBehaviour : MonoBehaviour
     public bool IsBurned;
     public float CurrentTowerHight;
     public bool HasTouchedPlate;
+
+    private SoundManager _soundManager;
+
     void Start()
     {
         StartCoroutine(MoveDown());
+
+        _soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        if (_soundManager != null)
+        {
+            _soundManager.LoadSoundWithOutPath("stack", _stackSound);
+        }
+        else
+        {
+            Debug.Log("No soundmanager found!");
+            return;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -39,6 +55,7 @@ public class BiscuitBehaviour : MonoBehaviour
         Destroy(GetComponent<PlayerInput>());
         _collidedWithTower.Raise(this, collision.gameObject);
         HasTouchedPlate = true;
+        _soundManager.PlaySound("stack");
     }
 
     public void MoveX(InputAction.CallbackContext ctx)
