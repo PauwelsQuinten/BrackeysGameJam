@@ -645,6 +645,10 @@ PrefabInstance:
       propertyPath: _heightText
       value: 
       objectReference: {fileID: 150043396}
+    - target: {fileID: 164170877365342875, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
+      propertyPath: _highScoreChanged
+      value: 
+      objectReference: {fileID: 11400000, guid: 83b54e03fd5820547b9f38123818a2e9, type: 2}
     - target: {fileID: 991606861228921974, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
       propertyPath: m_Name
       value: HUDui
