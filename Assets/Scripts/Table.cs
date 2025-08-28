@@ -7,14 +7,15 @@ public class Table : MonoBehaviour
     private GameEvent _takePenalty;
 
     private BiscuitSpawner _spawner;
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_spawner == null)_spawner = FindObjectOfType<BiscuitSpawner>();
+        if (_spawner == null) _spawner = FindObjectOfType<BiscuitSpawner>();
         BiscuitBehaviour biscuit = collision.gameObject.GetComponent<BiscuitBehaviour>();
         if (biscuit == null) return;
         _takePenalty.Raise(this, EventArgs.Empty);
         Destroy(collision.gameObject);
-        if(!biscuit.HasTouchedPlate) _spawner.SpawnRandomBiscuit();
+        if (!biscuit.HasTouchedPlate) _spawner.SpawnRandomBiscuit();
         else _spawner.RemoveBiscuit(biscuit);
     }
 }

@@ -23,6 +23,13 @@ public class PenaltySystem : MonoBehaviour
         if(_penalties >= 3) _gameOver.Raise(this, EventArgs.Empty);
     }
 
+    public void ResetPenalties(Component sender, object obj)
+    {
+        _penalties = 0;
+        _penaltiesIncreased.Raise(this, _penalties);
+        _canTakePenalty = true;
+    }
+
     private IEnumerator ResetCanTakePenalty()
     {
         yield return new WaitForSeconds(_gracePeriod);
