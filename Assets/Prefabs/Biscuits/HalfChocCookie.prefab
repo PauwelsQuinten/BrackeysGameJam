@@ -53,7 +53,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 72dc67c7c54dc0b43b383657dc307551, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -76,9 +76,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c5d08714a568e4bb92cccb5b147f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fallSpeed: 1.5
+  _fallSpeed: 1
   _collidedWithTower: {fileID: 11400000, guid: 4dd2d72c9c1d12245b1d58075d160aa1, type: 2}
   _lowerThanTower: {fileID: 11400000, guid: f440c6e87c88ae5428e4a6c2fc0fafd0, type: 2}
+  _biscuitDestroyed: {fileID: 11400000, guid: e153d450d2dcf4d4d98de654b540f248, type: 2}
   _burntTexture: {fileID: -6092344668827126774, guid: fd3dc4de14f62db4fa7a6fcde5dca8aa, type: 3}
   _texture: {fileID: 881768996580228794}
   _stackSound: {fileID: 0}
@@ -304,7 +305,7 @@ PolygonCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 72dc67c7c54dc0b43b383657dc307551, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

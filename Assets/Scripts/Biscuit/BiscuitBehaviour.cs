@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class BiscuitBehaviour : MonoBehaviour
 {
     [SerializeField]
-    private float _fallSpeed = 2;
+    private float _fallSpeed = 1;
     [SerializeField]
     private GameEvent _collidedWithTower;
     [SerializeField]
@@ -65,7 +65,7 @@ public class BiscuitBehaviour : MonoBehaviour
         if (ctx.performed)
         {
             _isMoving = true;
-            _movement = ctx.ReadValue<Vector2>() ;
+            _movement = ctx.ReadValue<Vector2>();
             StartCoroutine(MoveX());
         }
         if (ctx.canceled) _isMoving = false;
@@ -73,8 +73,8 @@ public class BiscuitBehaviour : MonoBehaviour
 
     public void MoveDown(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed) _fallSpeed *= 2f;
-        if(ctx.canceled) _fallSpeed = 2;
+        if (ctx.performed) _fallSpeed *= 2.5f;
+        if(ctx.canceled) _fallSpeed = 1;
     }
 
     public void Burn()
@@ -98,7 +98,7 @@ public class BiscuitBehaviour : MonoBehaviour
     {
         while (_isMoving)
         {
-            transform.position += transform.right * _movement.x * 2 *  Time.deltaTime;
+            transform.position += transform.right * _movement.x * Time.deltaTime;
             yield return null;
         }
     }

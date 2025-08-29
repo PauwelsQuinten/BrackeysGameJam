@@ -121,9 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c5d08714a568e4bb92cccb5b147f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fallSpeed: 1.5
+  _fallSpeed: 1
   _collidedWithTower: {fileID: 11400000, guid: 4dd2d72c9c1d12245b1d58075d160aa1, type: 2}
   _lowerThanTower: {fileID: 11400000, guid: f440c6e87c88ae5428e4a6c2fc0fafd0, type: 2}
+  _biscuitDestroyed: {fileID: 11400000, guid: e153d450d2dcf4d4d98de654b540f248, type: 2}
   _burntTexture: {fileID: 6752414080939289196, guid: 64ee75ca709c20346b3c329da112f6cd, type: 3}
   _texture: {fileID: 7132513966337402717}
   _stackSound: {fileID: 0}
