@@ -10,6 +10,10 @@ public class BiscuitSpawner : MonoBehaviour
     [SerializeField]
     private List<GameObject> _burntBiscuitPrefabs = new List<GameObject>();
     [SerializeField]
+    private float _biscuitMinSize = 0.5f;
+    [SerializeField]
+    private float _biscuitMaxSize = 1f;
+    [SerializeField]
     private GameEvent _towerGrew;
     [SerializeField]
     private GameEvent _biscuitAdded;
@@ -38,6 +42,8 @@ public class BiscuitSpawner : MonoBehaviour
         spawnedBiscuit.transform.parent = this.transform;
         spawnedBiscuit.GetComponent<Rigidbody2D>().gravityScale = 0;
         spawnedBiscuit.GetComponent<BiscuitBehaviour>().CurrentTowerHight = _towerHeight;
+        float scale = UnityEngine.Random.Range(_biscuitMinSize, _biscuitMaxSize);
+        spawnedBiscuit.transform.localScale = new Vector3(scale, scale, scale);
     }
 
     private GameObject SelectRandomBiscuit()
