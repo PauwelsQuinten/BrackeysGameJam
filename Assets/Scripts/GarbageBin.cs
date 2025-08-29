@@ -21,10 +21,10 @@ public class GarbageBin : MonoBehaviour
         if (!bis.IsBurned)
             AddStrike.Raise(this);
 
+        if (bis.HasTouchedPlate)
+            _spawner.RemoveBiscuit(bis);
+        else _spawner.SpawnRandomBiscuit();
+
         Destroy(biscuit);
-        if (bis.HasTouchedPlate) return;
-        _spawner.SpawnRandomBiscuit();
-
-
     }
 }

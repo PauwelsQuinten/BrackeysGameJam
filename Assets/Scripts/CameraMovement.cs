@@ -6,7 +6,7 @@ public class CameraMovement : MonoBehaviour
     private Coroutine _moveCam;
     public void TowerHeightChanged(Component sender, object obj)
     {
-        float newHeight = (float)(obj as float?);
+        float newHeight = (float)obj;
         if (_moveCam != null) StopCoroutine(_moveCam);
         _moveCam = StartCoroutine(ChangeCamHeight(newHeight));
     }

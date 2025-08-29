@@ -25,7 +25,13 @@ public class CheckPoint : MonoBehaviour
 
     public void TowerHeightChanged(Component sender, object obj)
     {
-        float newHeight = (float)(obj as float?);
+        BiscuitBehaviour biscuit = obj as BiscuitBehaviour;
+        float newHeight = 0;
+        if (biscuit != null)
+        {
+            newHeight = biscuit.transform.position.y;
+        }
+        else newHeight = (float)obj;
         _towerHeight = newHeight;
     }
 }

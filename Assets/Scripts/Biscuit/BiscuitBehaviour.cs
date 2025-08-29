@@ -12,8 +12,6 @@ public class BiscuitBehaviour : MonoBehaviour
     [SerializeField]
     private GameEvent _lowerThanTower;
     [SerializeField]
-    private GameEvent _biscuitDestroyed;
-    [SerializeField]
     private Sprite _burntTexture;
     [SerializeField]
     private SpriteRenderer _texture;
@@ -34,7 +32,11 @@ public class BiscuitBehaviour : MonoBehaviour
     {
         StartCoroutine(MoveDown());
 
-        _soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        PlayerInput input = GetComponent<PlayerInput>();
+        input.enabled = false;
+        input.enabled = true;
+
+        _soundManager = GameObject.FindAnyObjectByType<SoundManager>();
         if (_soundManager != null)
         {
             _soundManager.LoadSoundWithOutPath("stack", _stackSound);
@@ -86,7 +88,7 @@ public class BiscuitBehaviour : MonoBehaviour
     {
         while (!_hasCollided)
         {
-            transform.position -= transform.up * _fallSpeed * Time.deltaTime;
+            transform.position -= Vector3.up * _fallSpeed * Time.deltaTime;
             if (CurrentTowerHight > transform.position.y) _lowerThanTower.Raise(this, transform.position.y);
             yield return null;
         }
@@ -104,7 +106,6 @@ public class BiscuitBehaviour : MonoBehaviour
     private IEnumerator DestroyWithDelay()
     {
         yield return new WaitForSeconds(1);
-        _biscuitDestroyed.Raise(this, EventArgs.Empty);
         Destroy(this.gameObject);
     }
 }

@@ -12,6 +12,10 @@ public class BiscuitSpawner : MonoBehaviour
     [SerializeField]
     private GameEvent _towerGrew;
     [SerializeField]
+    private GameEvent _biscuitAdded;
+    [SerializeField]
+    private GameEvent _biscuitDestroyed;
+    [SerializeField]
     private GameEvent _takePenalty;
 
     private float _towerHeight = 0;
@@ -67,12 +71,12 @@ public class BiscuitSpawner : MonoBehaviour
         {
             BiscuitBehaviour biscuit = collider.gameObject.GetComponent<BiscuitBehaviour>();
             if(biscuit == null) continue;
+            RemoveBiscuit(biscuit);
             biscuit.Burn();
-            if(_biscuits.Count > 0)
+            if (_biscuits.Count > 0)
             {
                 if (_biscuits[0].GetComponent<BiscuitBehaviour>().IsBurned) _takePenalty.Raise(this, EventArgs.Empty);
             }
-            RemoveBiscuit(biscuit);
         }
 
     }
@@ -87,6 +91,7 @@ public class BiscuitSpawner : MonoBehaviour
             _towerHeight = newPiecePos.y;
             _biscuits.Add(biscuit.gameObject);
             _towerGrew.Raise(this, _towerHeight);
+            if(!biscuit.IsBurned) _biscuitAdded.Raise(this, EventArgs.Empty);
         }
         if (biscuit.IsBurned && collisionObj.GetComponent<BiscuitBehaviour>() != null)
             MakeBurntBiscuits(sender.gameObject.transform.position);
@@ -115,5 +120,6 @@ public class BiscuitSpawner : MonoBehaviour
         }
         else _towerHeight = 0;
         _towerGrew.Raise(this, _towerHeight);
+        if(!biscuit.IsBurned)_biscuitDestroyed.Raise(this, EventArgs.Empty);
     }
 }
