@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BurntScone_Cookie_0: 7994555009759575004
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

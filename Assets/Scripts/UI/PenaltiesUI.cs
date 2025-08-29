@@ -11,6 +11,7 @@ public class PenaltiesUI : MonoBehaviour
     public void PenaltiesChanged(Component sender, object obj)
     {
         int penalty = (int)(obj as int?);
+        if (penalty > 3) return;
         Color newColor = Color.white;
         if (penalty == 0)
         {

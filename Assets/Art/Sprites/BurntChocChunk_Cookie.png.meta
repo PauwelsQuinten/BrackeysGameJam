@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BurntChocChunk_Cookie_0: 6752414080939289196
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -109,7 +109,10 @@ public class BiscuitSpawner : MonoBehaviour
     public void RemoveBiscuit(BiscuitBehaviour biscuit)
     {
         _biscuits.Remove(biscuit.gameObject);
-        if (_biscuits.Count - 1 >= 0) _towerHeight = _biscuits[_biscuits.Count - 1].transform.position.y;
+        if (_biscuits.Count - 1 >= 0)
+        {
+            if(_biscuits[_biscuits.Count - 1] != null) _towerHeight = _biscuits[_biscuits.Count - 1].transform.position.y;
+        }
         else _towerHeight = 0;
         _towerGrew.Raise(this, _towerHeight);
     }
