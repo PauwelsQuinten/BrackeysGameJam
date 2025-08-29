@@ -18,9 +18,6 @@ public class GarbageBin : MonoBehaviour
 
         if (bis == null) return;
 
-        if (!bis.IsBurned)
-            AddStrike.Raise(this);
-
         if (bis.HasTouchedPlate)
             _spawner.RemoveBiscuit(bis);
         else _spawner.SpawnRandomBiscuit();
