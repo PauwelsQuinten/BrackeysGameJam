@@ -226,6 +226,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1b896b3f500e4a242b4a9f5b2586c26a, type: 2}
     - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
+      propertyPath: _biscuitAdded
+      value: 
+      objectReference: {fileID: 11400000, guid: 1eba19245a6cd654695203f79f47868f, type: 2}
+    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
+      propertyPath: _biscuitDestroyed
+      value: 
+      objectReference: {fileID: 11400000, guid: e153d450d2dcf4d4d98de654b540f248, type: 2}
+    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
       propertyPath: _biscuitPrefabs.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -667,6 +675,14 @@ PrefabInstance:
     - target: {fileID: 3179114438366896301, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8385469465516360674, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
+      propertyPath: 'Events.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1eba19245a6cd654695203f79f47868f, type: 2}
+    - target: {fileID: 8385469465516360674, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
+      propertyPath: Responses.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BiscuitAdded
       objectReference: {fileID: 0}
     - target: {fileID: 8457139952747241795, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
       propertyPath: '_penaltyImages.Array.data[0]'
