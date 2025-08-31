@@ -1,26 +1,29 @@
+using System;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HeightMeterUI : MonoBehaviour
 {
     [SerializeField]
-    private Image _heightMeter;
-    [SerializeField] 
-    private float _maxHeight = 50;
+    private TextMeshProUGUI _heightText;
 
     [SerializeField]
     private GameEvent _highScoreChanged;
 
-    private float _height = 0;
-    public void HeightChanged(Component sender, object obj)
+    private int _height = 0;
+    private float _previousHeight = 0;
+    private int _previousHighScore = 0;
+    public void BiscuitAdded(Component sender, object obj)
     {
-        _height = (float)obj;
-        _heightMeter.fillAmount = _height / _maxHeight;
+        _height++;
+        _heightText.text = $"Height: {_height}";
+
     }
 
     public void BiscuitDestroyed(Component sender, object obj)
     {
-        //_height--;
-        //_heightText.text = $"Height: {_height}";
+        _height--;
+        _heightText.text = $"Height: {_height}";
     }
 }
