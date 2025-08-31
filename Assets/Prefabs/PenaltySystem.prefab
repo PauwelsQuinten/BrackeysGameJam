@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8db9b3bdf1f35d488de54689fa1c8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gracePeriod: 1
+  _gracePeriod: 3
   _penaltiesIncreased: {fileID: 11400000, guid: 19ee608924d8c2b479f7bd14a49606b5, type: 2}
   _gameOver: {fileID: 11400000, guid: 6066a59acdd17f34da829f918387f9d4, type: 2}
 --- !u!114 &6722065624041209284
