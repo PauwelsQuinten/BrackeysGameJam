@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundFloor
       objectReference: {fileID: 0}
+    - target: {fileID: 2731911291117546326, guid: 2439e5877ded2c54eaa7c1b5b84acbb4, type: 3}
+      propertyPath: HorizontalSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8201986587398851191, guid: 2439e5877ded2c54eaa7c1b5b84acbb4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
