@@ -79,8 +79,8 @@ public class BiscuitBehaviour : MonoBehaviour
 
     public void Burn()
     {
-        _texture.sprite = _burntTexture;
         IsBurned = true;
+        _texture.sprite = _burntTexture;
         StartCoroutine(DestroyWithDelay());
     }
 

@@ -71,8 +71,8 @@ public class BiscuitSpawner : MonoBehaviour
         {
             BiscuitBehaviour biscuit = collider.gameObject.GetComponent<BiscuitBehaviour>();
             if(biscuit == null) continue;
-            RemoveBiscuit(biscuit);
             biscuit.Burn();
+            RemoveBiscuit(biscuit);
             if (_biscuits.Count > 0)
             {
                 if (_biscuits[0].GetComponent<BiscuitBehaviour>().IsBurned) _takePenalty.Raise(this, EventArgs.Empty);
@@ -103,7 +103,6 @@ public class BiscuitSpawner : MonoBehaviour
             {
                 if (_biscuits[0].GetComponent<BiscuitBehaviour>().IsBurned) _takePenalty.Raise(this, EventArgs.Empty);
             }
-
             RemoveBiscuit(biscuit);
         }
 
