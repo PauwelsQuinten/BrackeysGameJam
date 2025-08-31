@@ -46,10 +46,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _biscuitPrefabs:
+  - {fileID: 3591082873644971568, guid: 7a5815c2699f16f47a2f10d9ed5e6a7f, type: 3}
   - {fileID: 3591082873644971568, guid: a045c69834e55704495d98c93fe74785, type: 3}
+  - {fileID: 3591082873644971568, guid: 79db8912398b705489d4abb18c042af1, type: 3}
+  - {fileID: 3591082873644971568, guid: 9f7a980a0277c7c409e1439895d60e51, type: 3}
   _burntBiscuitPrefabs:
+  - {fileID: 3591082873644971568, guid: 0b979bb6f4ffe074cb32ffa822b44be6, type: 3}
   - {fileID: 896438755298123094, guid: b0ef20f36424c24488dd47127d31d8b5, type: 3}
+  - {fileID: 3591082873644971568, guid: 495369623cf0bd94a98aac7f6395da30, type: 3}
+  - {fileID: 3591082873644971568, guid: 5412f542afca68b47826d3a66148d87a, type: 3}
+  _biscuitMinSize: 0.5
+  _biscuitMaxSize: 1
   _towerGrew: {fileID: 11400000, guid: ddd8f4f545cf6ab42a5b888c7b023a50, type: 2}
+  _biscuitAdded: {fileID: 11400000, guid: 1eba19245a6cd654695203f79f47868f, type: 2}
+  _biscuitDestroyed: {fileID: 11400000, guid: e153d450d2dcf4d4d98de654b540f248, type: 2}
+  _takePenalty: {fileID: 11400000, guid: 1b896b3f500e4a242b4a9f5b2586c26a, type: 2}
 --- !u!114 &20428128638883722
 MonoBehaviour:
   m_ObjectHideFlags: 0

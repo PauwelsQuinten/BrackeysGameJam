@@ -130,17 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &150043396 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1598014733392896753, guid: 1d0c64cac8daf7d409d1e1b183e62f66, type: 3}
-  m_PrefabInstance: {fileID: 1319102392}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &177205525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -152,6 +141,10 @@ PrefabInstance:
     - target: {fileID: 2007178552061317604, guid: 2439e5877ded2c54eaa7c1b5b84acbb4, type: 3}
       propertyPath: m_Name
       value: GroundFloor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731911291117546326, guid: 2439e5877ded2c54eaa7c1b5b84acbb4, type: 3}
+      propertyPath: HorizontalSpeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8201986587398851191, guid: 2439e5877ded2c54eaa7c1b5b84acbb4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -221,58 +214,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BiscuitSpawer
       objectReference: {fileID: 0}
-    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
-      propertyPath: _takePenalty
-      value: 
-      objectReference: {fileID: 11400000, guid: 1b896b3f500e4a242b4a9f5b2586c26a, type: 2}
-    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
-      propertyPath: _biscuitAdded
-      value: 
-      objectReference: {fileID: 11400000, guid: 1eba19245a6cd654695203f79f47868f, type: 2}
-    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
-      propertyPath: _biscuitDestroyed
-      value: 
-      objectReference: {fileID: 11400000, guid: e153d450d2dcf4d4d98de654b540f248, type: 2}
-    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
-      propertyPath: _biscuitPrefabs.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
-      propertyPath: '_biscuitPrefabs.Array.data[0]'
-      value: 
-      objectReference: {fileID: 3591082873644971568, guid: 7a5815c2699f16f47a2f10d9ed5e6a7f, type: 3}
-    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
-      propertyPath: '_biscuitPrefabs.Array.data[1]'
-      value: 
-      objectReference: {fileID: 3591082873644971568, guid: a045c69834e55704495d98c93fe74785, type: 3}
-    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
-      propertyPath: '_biscuitPrefabs.Array.data[2]'
-      value: 
-      objectReference: {fileID: 3591082873644971568, guid: 79db8912398b705489d4abb18c042af1, type: 3}
-    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
-      propertyPath: '_biscuitPrefabs.Array.data[3]'
-      value: 
-      objectReference: {fileID: 3591082873644971568, guid: 9f7a980a0277c7c409e1439895d60e51, type: 3}
-    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
-      propertyPath: _burntBiscuitPrefabs.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
-      propertyPath: '_burntBiscuitPrefabs.Array.data[0]'
-      value: 
-      objectReference: {fileID: 3591082873644971568, guid: 0b979bb6f4ffe074cb32ffa822b44be6, type: 3}
-    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
-      propertyPath: '_burntBiscuitPrefabs.Array.data[1]'
-      value: 
-      objectReference: {fileID: 896438755298123094, guid: b0ef20f36424c24488dd47127d31d8b5, type: 3}
-    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
-      propertyPath: '_burntBiscuitPrefabs.Array.data[2]'
-      value: 
-      objectReference: {fileID: 3591082873644971568, guid: 495369623cf0bd94a98aac7f6395da30, type: 3}
-    - target: {fileID: 7034048948594423799, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
-      propertyPath: '_burntBiscuitPrefabs.Array.data[3]'
-      value: 
-      objectReference: {fileID: 3591082873644971568, guid: 5412f542afca68b47826d3a66148d87a, type: 3}
     - target: {fileID: 8518837906916983021, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -318,6 +259,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84e6ab5cea55ba64a8e007f1e52e0a25, type: 3}
+--- !u!114 &858167701 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 74192035597635118, guid: 1d0c64cac8daf7d409d1e1b183e62f66, type: 3}
+  m_PrefabInstance: {fileID: 1319102392}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &865109208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405,7 +357,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: b9810edddcc17c74f94fd47718bfc9e9, type: 3}
   m_Resource: {fileID: 8300000, guid: b9810edddcc17c74f94fd47718bfc9e9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.593
+  m_Volume: 0.234
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -625,13 +577,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 164170877365342875, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
-      propertyPath: _heightText
+      propertyPath: _heightMeter
       value: 
-      objectReference: {fileID: 150043396}
-    - target: {fileID: 164170877365342875, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
-      propertyPath: _highScoreChanged
-      value: 
-      objectReference: {fileID: 11400000, guid: 83b54e03fd5820547b9f38123818a2e9, type: 2}
+      objectReference: {fileID: 858167701}
     - target: {fileID: 991606861228921974, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
       propertyPath: m_Name
       value: HUDui
@@ -675,14 +623,6 @@ PrefabInstance:
     - target: {fileID: 3179114438366896301, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8385469465516360674, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
-      propertyPath: 'Events.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 1eba19245a6cd654695203f79f47868f, type: 2}
-    - target: {fileID: 8385469465516360674, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
-      propertyPath: Responses.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BiscuitAdded
       objectReference: {fileID: 0}
     - target: {fileID: 8457139952747241795, guid: 0a1407846cd594247843a4bf9a6734e3, type: 3}
       propertyPath: '_penaltyImages.Array.data[0]'
